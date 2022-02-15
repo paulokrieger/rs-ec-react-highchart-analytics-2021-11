@@ -1,6 +1,6 @@
 import { ChangeEvent, useCallback } from "react";
 import * as S from "./styles";
-import ExpertsClubLogo from "../../assets/expets-club-logo.svg";
+import CloudmesLogo from "../../assets/cloudmes-logo.svg";
 import { AnalyticsService } from "../../service/Analytics";
 import { AxiosAdapter } from "../../infra/AxiosAdapter";
 import { AnalyticsData } from "../../model";
@@ -28,14 +28,14 @@ const PRESET_DATAS: PresetDataProps[] = [
         title: "Últimos 3 meses",
         value: "last_3_months",
     },
-    {
-        title: "Últimos 6 meses",
-        value: "last_6_months",
-    },
-    {
-        title: "Últimos 12 meses",
-        value: "last_12_months",
-    },
+    // {
+    //     title: "Últimos 6 meses",
+    //     value: "last_6_months",
+    // },
+    // {
+    //     title: "Últimos 12 meses",
+    //     value: "last_12_months",
+    // },
 ];
 
 const axios = new AxiosAdapter();
@@ -59,18 +59,17 @@ const Header = () => {
     return (
         <S.Wrapper>
             <S.Head>
-                <img src={ExpertsClubLogo} alt="Experts club logo" />
+                <img src={CloudmesLogo} alt="CloudMES Logo" />
             </S.Head>
             <S.Main>
-                <h5>RS Analytics</h5>
+                <h5>CloudMES Analytics</h5>
                 <span>
-                    Acompanhe a quantidade de acesso gerado nas páginas da
-                    rocketseat, métricas de alunos que acessaram a trilha ignite
-                    e experts club
+                    Acompanhe aqui todas as estatísticas geradas pela empresa.
                 </span>
 
                 <S.Content>
-                    <h3>Dados de acesso</h3>
+                    <h3>Empresa</h3>
+
                     <select
                         defaultValue="DEFAULT"
                         data-testid="select-period-id"

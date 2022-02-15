@@ -1,0 +1,148 @@
+{
+    "yesterday": {
+        "totalQuilos": {
+            "value": 80
+        },
+        "totalPeças": {
+            "value": 25
+        },
+
+        "totalQuilosMonth": {
+            "months": [[1604199600000, 80]]
+        },
+        "totalPeçasMonth": {
+            "months": [[1604199600000, 205]]
+        },
+        "totalStops": {
+            "Ruptura de Fio": {
+                "porcentage": 55,
+                "value": 70
+            },
+            "Intervalo": {
+                "porcentage": 15,
+                "value": 20
+            },
+            "Peça acabada": {
+                "porcentage": 20,
+                "value": 13
+            },
+            "Outros": {
+                "porcentage": 10,
+                "value": 10
+            },
+            "all": 113
+        }
+    },
+
+    "last_week": {
+        "totalQuilos": {
+            "value": 750
+        },
+        "totalPeças": {
+            "value": 350
+        },
+
+        "totalQuilosMonth": {
+            "months": [[1604199600000, 750]]
+        },
+        "totalPeçasMonth": {
+            "months": [[1604199600000, 350]]
+        },
+        "totalStops": {
+            "Ruptura de Fio": {
+                "porcentage": 50,
+                "value": 455
+            },
+            "Intervalo": {
+                "porcentage": 25,
+                "value": 120
+            },
+            "Peça acabada": {
+                "porcentage": 20,
+                "value": 100
+            },
+            "Outros": {
+                "porcentage": 15,
+                "value": 20
+            },
+            "all": 695
+        }
+    },
+
+    "last_30_days": {
+        "totalQuilos": {
+            "value": 50000
+        },
+        "totalPeças": {
+            "value": 800
+        },
+
+        "totalQuilosMonth": {
+            "months": [[1604199600000, 50000]]
+        },
+        "totalPeçasMonth": {
+            "months": [[1604199600000, 800]]
+        },
+        "totalStops": {
+            "Ruptura de Fio": {
+                "porcentage": 50,
+                "value": 850
+            },
+            "Intervalo": {
+                "porcentage": 25,
+                "value": 220
+            },
+            "Peça acabada": {
+                "porcentage": 20,
+                "value": 180
+            },
+            "Outros": {
+                "porcentage": 15,
+                "value": 60
+            },
+            "all": 1310
+        }
+    },
+
+    "last_3_months": {
+        "totalQuilos": {
+            "value": 150000
+        },
+        "totalPeças": {
+            "value": 2400
+        }
+    },
+    "totalQuilosMonth": {
+        "months": [
+            [1604199600000, 50000],
+            [1601521200000, 27000],
+            [1598929200000, 45000]
+        ]
+    },
+    "totalPeçasMonth": {
+        "months": [
+            [1604199600000, 800],
+            [1604199600000, 875],
+            [1604199600000, 625]
+        ]
+    },
+    "totalStops": {
+        "Ruptura de Fio": {
+            "porcentage": 50,
+            "value": 1850
+        },
+        "Intervalo": {
+            "porcentage": 25,
+            "value": 380
+        },
+        "Peça acabada": {
+            "porcentage": 20,
+            "value": 290
+        },
+        "Outros": {
+            "porcentage": 15,
+            "value": 180
+        },
+        "all": 2700
+    }
+}

@@ -4,11 +4,11 @@ import { AnalyticsColors } from "../../../../constants";
 import useAnalyticsData from "../../../../hook/useAnalyticsData";
 import * as S from "./styles";
 
-const PorcentageOfAccessOnPages = () => {
+const PorcentageOfStop = () => {
     const { analyticsDataState } = useAnalyticsData();
     const options: Highcharts.Options = {
         title: {
-            text: "Porcentagem de acessos nas páginas",
+            text: "Porcentagem de paradas",
             useHTML: true,
             style: {
                 fontSize: "20px",
@@ -30,20 +30,28 @@ const PorcentageOfAccessOnPages = () => {
                 innerSize: "60%",
                 data: [
                     {
-                        x: analyticsDataState?.totalAccessOnPages?.expertsClub
-                            ?.value,
-                        y: analyticsDataState?.totalAccessOnPages?.expertsClub
+                        x: analyticsDataState?.totalStops?.rupturaFio?.value,
+                        y: analyticsDataState?.totalStops?.rupturaFio
                             ?.porcentage,
+
                         color: AnalyticsColors.ecWine,
-                        name: "Experts Club",
+                        name: "Ruptura de Fio",
                     },
                     {
-                        x: analyticsDataState?.totalAccessOnPages?.ignite
-                            ?.value,
-                        y: analyticsDataState?.totalAccessOnPages?.ignite
+                        x: analyticsDataState?.totalStops?.pecaAcabada?.value,
+                        y: analyticsDataState?.totalStops?.pecaAcabada
                             ?.porcentage,
+
                         color: AnalyticsColors.purple,
-                        name: "Ignite",
+                        name: "Peça Acabada",
+                    },
+                    {
+                        x: analyticsDataState?.totalStops?.intervalo?.value,
+                        y: analyticsDataState?.totalStops?.intervalo
+                            ?.porcentage,
+
+                        color: AnalyticsColors.darkGray,
+                        name: "Intervalo",
                     },
                 ],
             },
@@ -64,9 +72,10 @@ const PorcentageOfAccessOnPages = () => {
             useHTML: true,
             formatter() {
                 const self: TooltipFormatterContextObject = this;
+
                 return `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; z-index: 1">
                 <h1 style="font-size: 36px; font-family: Inter; color: ${AnalyticsColors.black}; margin: 0px;"> ${self.point.y}% </h1>
-                <span style="font-size: 24px; font-weight: 500; font-style: normal; color: ${AnalyticsColors.darkGray}">${self.point.x} Acessos </span>
+                <span style="font-size: 24px; font-weight: 500; font-style: normal; color: ${AnalyticsColors.darkGray}">${self.point.x} Paradas </span>
                 </div>`;
             },
             positioner() {
@@ -79,7 +88,7 @@ const PorcentageOfAccessOnPages = () => {
         <S.Wrapper>
             <S.TotalOfAccess>
                 <span>
-                    <b>{analyticsDataState?.totalAccessOnPages?.all}</b> Acessos
+                    <b>{analyticsDataState?.totalStops?.all}</b> Paradas
                 </span>
             </S.TotalOfAccess>
             <Chart options={options} />
@@ -87,4 +96,4 @@ const PorcentageOfAccessOnPages = () => {
     );
 };
 
-export default PorcentageOfAccessOnPages;
+export default PorcentageOfStop;

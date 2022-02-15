@@ -14,8 +14,8 @@ export const Head = styled.div`
     box-shadow: 0px 0px 5px 0px ${AnalyticsColors.grey};
 
     img {
-        width: 240px;
-        height: 48px;
+        width: 180px;
+        height: 40px;
     }
 `;
 
@@ -39,7 +39,7 @@ export const Main = styled.main`
         margin: 0;
 
         font-weight: normal;
-        font-size: 36px;
+        font-size: 23px;
         line-height: 44px;
 
         color: ${AnalyticsColors.black};
@@ -113,5 +113,18 @@ export const Content = styled.section`
     @media ${device.xs} {
         flex-direction: column;
         height: 130px;
+    }
+`;
+
+export const Filters = styled.section`
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    h5 {
+        font-weight: bold;
+        font-size: 16px;
+        padding-left: 5px;
     }
 `;

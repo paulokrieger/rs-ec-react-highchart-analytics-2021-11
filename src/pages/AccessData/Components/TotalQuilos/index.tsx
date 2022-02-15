@@ -4,12 +4,12 @@ import Eye from "../../../../assets/eye.svg";
 import { AnalyticsColors } from "../../../../constants";
 import useAnalyticsData from "../../../../hook/useAnalyticsData";
 
-export const TotalAccessOnPages = () => {
+export const TotalQuilos = () => {
     const { analyticsDataState } = useAnalyticsData();
 
     const options: Highcharts.Options = {
         title: {
-            text: `<img src=${Eye} width="16" height="16" style="margin-right:8px;" alt="Ícone de view" /> Total de acessos nas páginas`,
+            text: `<img src=${Eye} width="16" height="16" style="margin-right:8px;" alt="Ícone de view" /> Total de quilos produzido no período`,
             useHTML: true,
             align: "left",
             style: {
@@ -21,6 +21,12 @@ export const TotalAccessOnPages = () => {
                 fontFamily: "Inter",
             },
         },
+        subtitle: {
+            align: "right",
+            text: `${[
+                analyticsDataState?.totalQuilos?.total,
+            ]} Quilos Produzidos`,
+        },
 
         chart: {
             type: "column",
@@ -28,18 +34,22 @@ export const TotalAccessOnPages = () => {
 
         series: [
             {
-                name: "Ignite",
+                name: "Turno 1",
                 type: "column",
-                data: [analyticsDataState?.totalAccessOnPages?.ignite?.value],
+                data: [analyticsDataState?.totalQuilos?.turno1.value],
+                color: AnalyticsColors.ecWine,
+            },
+            {
+                name: "Turno 2",
+                type: "column",
+                data: [analyticsDataState?.totalQuilos?.turno2.value],
                 color: AnalyticsColors.purple,
             },
             {
-                name: "Experts Club",
+                name: "Turno 3",
                 type: "column",
-                data: [
-                    analyticsDataState?.totalAccessOnPages?.expertsClub?.value,
-                ],
-                color: AnalyticsColors.ecWine,
+                data: [analyticsDataState?.totalQuilos?.turno3.value],
+                color: AnalyticsColors.darkGray,
             },
         ],
 
@@ -84,4 +94,4 @@ export const TotalAccessOnPages = () => {
     );
 };
 
-export default TotalAccessOnPages;
+export default TotalQuilos;

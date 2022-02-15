@@ -5,32 +5,23 @@ import { AnalyticsColors } from "../../../../constants";
 import useAnalyticsData from "../../../../hook/useAnalyticsData";
 import * as S from "./styles";
 
-const TotalAccessPerHour = () => {
+const TotalPecasPerMonth = () => {
     const { analyticsDataState } = useAnalyticsData();
     const options: Highcharts.Options = {
         title: {
             text: "",
         },
 
-        series: [
-            {
-                type: "column",
-                name: "Experts Club",
-                color: AnalyticsColors.ecWine,
-                data: analyticsDataState.totalAccessOnPagesByHour?.expertsClub,
-            },
-            {
-                type: "spline",
-                name: "Ignite",
-                color: AnalyticsColors.purple,
-                data: analyticsDataState.totalAccessOnPagesByHour?.ignite,
-            },
-        ],
-
         xAxis: {
-            min: 0,
-            max: 23,
-            tickInterval: 1,
+            type: "datetime",
+
+            title: {
+                text: "",
+            },
+
+            labels: {
+                format: "{value: %b}",
+            },
         },
 
         yAxis: {
@@ -39,10 +30,19 @@ const TotalAccessPerHour = () => {
             },
         },
 
+        series: [
+            {
+                type: "column",
+                name: "Total de peças produzidas",
+                color: AnalyticsColors.purple,
+                data: analyticsDataState.totalPecasMonth?.months || [
+                    [1643802727, 0],
+                ],
+            },
+        ],
+
         legend: {
-            align: "left",
-            verticalAlign: "top",
-            margin: 40,
+            enabled: false,
         },
 
         tooltip: {
@@ -51,7 +51,7 @@ const TotalAccessPerHour = () => {
                 const self: TooltipFormatterContextObject = this;
                 return `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; z-index: 1">
                 <h1 style="font-size: 30px; font-family: Inter; color: ${AnalyticsColors.black}; margin: 0px;"> ${self.point.y}</h1>
-                <span style="font-size: 16px; font-weight: 500; font-style: normal; color: ${AnalyticsColors.darkGray}"> Acessos </span>
+                <span style="font-size: 16px; font-weight: 500; font-style: normal; color: ${AnalyticsColors.darkGray}"> Peças produzidas</span>
                 </div>`;
             },
         },
@@ -59,12 +59,13 @@ const TotalAccessPerHour = () => {
     return (
         <S.Wrapper>
             <CustomChartTitle
-                description="Acompanhe a quantidade de acesso por hora nas páginas do ignite e do experts club"
-                title="Total de acessos por hora nas páginas"
+                title="Total de peças produzidas por mês"
+                description="Acompanhe a quantidade de peças produzidas mês a mês, referente ao período selecionado"
             />
+
             <Chart options={options} />
         </S.Wrapper>
     );
 };
 
-export default TotalAccessPerHour;
+export default TotalPecasPerMonth;

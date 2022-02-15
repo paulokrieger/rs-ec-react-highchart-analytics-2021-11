@@ -5,7 +5,7 @@ import { AnalyticsColors } from "../../../../constants";
 import useAnalyticsData from "../../../../hook/useAnalyticsData";
 import * as S from "./styles";
 
-const TotalAccessPerMonth = () => {
+const TotalQuilosPerMonth = () => {
     const { analyticsDataState } = useAnalyticsData();
     const options: Highcharts.Options = {
         title: {
@@ -33,9 +33,9 @@ const TotalAccessPerMonth = () => {
         series: [
             {
                 type: "column",
-                name: "Total médio de acessos",
+                name: "Total de quilos produzidos",
                 color: AnalyticsColors.purple,
-                data: analyticsDataState.totalAccessOnPagesByMonth?.months || [
+                data: analyticsDataState.totalQuilosMonth?.months || [
                     [1604199600000, 0],
                 ],
             },
@@ -51,7 +51,7 @@ const TotalAccessPerMonth = () => {
                 const self: TooltipFormatterContextObject = this;
                 return `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; z-index: 1">
                 <h1 style="font-size: 30px; font-family: Inter; color: ${AnalyticsColors.black}; margin: 0px;"> ${self.point.y}</h1>
-                <span style="font-size: 16px; font-weight: 500; font-style: normal; color: ${AnalyticsColors.darkGray}"> Acessos no mês</span>
+                <span style="font-size: 16px; font-weight: 500; font-style: normal; color: ${AnalyticsColors.darkGray}"> Quilos produzidos</span>
                 </div>`;
             },
         },
@@ -59,8 +59,8 @@ const TotalAccessPerMonth = () => {
     return (
         <S.Wrapper>
             <CustomChartTitle
-                description="Acompanhe a quantidade média de acesso por mês e dia nas páginas do ignite e do experts clubs"
-                title="Total médio de acessos por mês nas páginas"
+                title="Total de quilos produzidos por mês"
+                description="Acompanhe a quantidade de quilos produzidos mês a mês, referente ao período selecionado"
             />
 
             <Chart options={options} />
@@ -68,4 +68,4 @@ const TotalAccessPerMonth = () => {
     );
 };
 
-export default TotalAccessPerMonth;
+export default TotalQuilosPerMonth;

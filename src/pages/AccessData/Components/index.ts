@@ -1,5 +1,5 @@
-export { default as TotalAccessOnPages } from "./TotalAccessOnPages";
-export { default as PorcentageOfAccessOnPages } from "./PorcentageOfAccessOnPages";
-export { default as TotalAccessPerHour } from "./TotalAccessPerHour";
-export { default as TotalAccessPerMonth } from "./TotalAccessPerMonth";
-export { default as Wordcloud } from "./Wordcloud";
+export { default as TotalPecas } from "./TotalPecas";
+export { default as TotalPecasPerMonth } from "./TotalPecasPerMonth";
+export { default as TotalQuilos } from "./TotalQuilos";
+export { default as TotalQuilosPerMonth } from "./TotalQuilosPerMonth";
+export { default as PorcentageOfStop } from "./PorcentageOfStop";

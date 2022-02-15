@@ -10,28 +10,27 @@ export const Content = styled.section`
     column-gap: 40px;
 
     grid-template:
-        "totalAccessOnPages porcentageOfAccessOnPages" minmax(auto, auto)
-        "totalAccessPerHour totalAccessPerHour" minmax(auto, auto)
-        "totalAccessPerMonth totalAccessPerMonth" minmax(auto, auto)
-        "wordcloud wordcloud" minmax(auto, auto)
-        / 995px 710px;
+        "totalQuilos totalPecas" minmax(auto, auto)
+        "totalPecasPerMonth totalPecasPerMonth" minmax(auto, auto)
+        "totalQuilosPerMonth totalQuilosPerMonth" minmax(auto, auto)
+        "porcentageOfStop porcentageOfStop" minmax(auto, auto)
+        / 850px;
 
     @media ${device.lg} {
         grid-template:
-            "totalAccessOnPages porcentageOfAccessOnPages" minmax(auto, auto)
-            "totalAccessPerHour totalAccessPerHour" minmax(auto, auto)
-            "totalAccessPerMonth totalAccessPerMonth" minmax(auto, auto)
-            "wordcloud wordcloud" minmax(auto, auto)
-            / 795px 510px;
+            "totalQuilos totalPecas" minmax(auto, auto)
+            "totalPecasPerMonth totalPecasPerMonth" minmax(auto, auto)
+            "porcentageOfStop porcentageOfStop" minmax(auto, auto)
+            / 652px;
     }
 
     @media ${device.md} {
         grid-template:
-            "totalAccessOnPages" minmax(auto, auto)
-            "porcentageOfAccessOnPages" minmax(auto, auto)
-            "totalAccessPerHour" minmax(auto, auto)
-            "totalAccessPerMonth" minmax(auto, auto)
-            "wordcloud" minmax(auto, auto)
+            "totalQuilos" minmax(auto, auto)
+            "totalPecas" minmax(auto, auto)
+            "totalPecasPerMonth" minmax(auto, auto)
+            "totalQuilosPerMonth" minmax(auto, auto)
+            "porcentageOfStop" minmax(auto, auto)
             / 900px;
 
         justify-content: center;
@@ -39,21 +38,21 @@ export const Content = styled.section`
 
     @media ${device.sm} {
         grid-template:
-            "totalAccessOnPages" minmax(auto, auto)
-            "porcentageOfAccessOnPages" minmax(auto, auto)
-            "totalAccessPerHour" minmax(auto, auto)
-            "totalAccessPerMonth" minmax(auto, auto)
-            "wordcloud" minmax(auto, auto)
+            "totalQuilos" minmax(auto, auto)
+            "totalPecas" minmax(auto, auto)
+            "totalPecasPerMonth" minmax(auto, auto)
+            "totalQuilosPerMonth" minmax(auto, auto)
+            "porcentageOfStop" minmax(auto, auto)
             / 600px;
     }
 
     @media ${device.xs} {
         grid-template:
-            "totalAccessOnPages" minmax(auto, auto)
-            "porcentageOfAccessOnPages" minmax(auto, auto)
-            "totalAccessPerHour" minmax(auto, auto)
-            "totalAccessPerMonth" minmax(auto, auto)
-            "wordcloud" minmax(auto, auto)
+            "totalQuilos" minmax(auto, auto)
+            "totalPecas" minmax(auto, auto)
+            "totalPecasPerMonth" minmax(auto, auto)
+            "totalQuilosPerMonth" minmax(auto, auto)
+            "porcentageOfStop" minmax(auto, auto)
             / 400px;
     }
 `;
